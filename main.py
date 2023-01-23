@@ -17,7 +17,7 @@ def drawing_picture(prompt):
     return (image)
 
 def load_text():
-    text = st.text_input()
+    text = st.text_input("Enter your text in English")
     return text   
     
     
