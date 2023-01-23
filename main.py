@@ -10,7 +10,7 @@ def drawing_picture(prompt):
     pipe = StableDiffusionPipeline.from_pretrained(model_id, revision="fp16", torch_dtype=torch.float16)
 
     has_cuda = torch.cuda.is_available() # проверка запущена ли CUDA
-    st.text(has_cuda)
+    st.write(has_cuda)
     #pipe = pipe.to('cpu' if not has_cuda else 'cuda')
     #generator = torch.Generator('cpu' if not has_cuda else 'cuda').manual_seed(0)
     
