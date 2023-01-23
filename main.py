@@ -30,5 +30,5 @@ if result:
     st.write(text)
     picture = drawing_picture(text)
     st.write('**Результаты построения изображения по модели CompVis/stable-diffusion-v1-4:**') 
-    print_predictions(preds) # вывод результатов
     st.image(picture)
+    st.write('**Надеюсь, вам понравилось**') 
