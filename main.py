@@ -26,7 +26,8 @@ text = load_text() # загрузка текста
 result = st.button('Нарисовать изображение') # присвоение статуса по нажатию кнопки
 
 if result:
-    st.write('**Ожидайте пока искусственный интеллект рисует**') 
+    st.write('**Ожидайте пока искусственный интеллект рисует картину**') 
+    st.write(text)
     picture = drawing_picture(text)
     st.write('**Результаты построения изображения по модели CompVis/stable-diffusion-v1-4:**') 
     print_predictions(preds) # вывод результатов
