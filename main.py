@@ -23,9 +23,10 @@ def load_text():
     
 st.title('Построение изображений в Streamlit') # вывод шапки
 text = load_text() # загрузка текста
-result = st.button('Распознать изображение') # присвоение статуса по нажатию кнопки
+result = st.button('Нарисовать изображение') # присвоение статуса по нажатию кнопки
 
 if result:
+    st.write('**Ожидайте пока искусственный интеллект рисует**') 
     picture = drawing_picture(text)
     st.write('**Результаты построения изображения по модели CompVis/stable-diffusion-v1-4:**') 
     print_predictions(preds) # вывод результатов
