@@ -8,3 +8,4 @@ accelerate
 IPython
 pillow
 httpx
+streamlit
