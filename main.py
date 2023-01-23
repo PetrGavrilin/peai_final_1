@@ -2,6 +2,7 @@ from diffusers import StableDiffusionPipeline
 import torch 
 import accelerate
 from IPython.display import display
+import streamlit as st
 
 def drawing_picture(prompt):
 # функция рисует картину по полученном описанию в виде строки
@@ -14,3 +15,18 @@ def drawing_picture(prompt):
     image = pipe(prompt, guidance_scale=7.5, num_inference_steps=15, generator=generator).images[0]
 
     return (image)
+
+def load_text():
+    text = st.text_input()
+    return text   
+    
+    
+st.title('Построение изображений в Streamlit') # вывод шапки
+text = load_text() # загрузка текста
+result = st.button('Распознать изображение') # присвоение статуса по нажатию кнопки
+
+if result:
+    picture = drawing_picture(text)
+    st.write('**Результаты построения изображения по модели CompVis/stable-diffusion-v1-4:**') 
+    print_predictions(preds) # вывод результатов
+    st.image(picture)
